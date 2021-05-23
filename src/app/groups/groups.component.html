@@ -1,0 +1,45 @@
+<div class="Groups">
+  <div class="Busqueda">
+    <div class="row main-row">
+      <div class="col left">
+        <div class="row first-row">
+          <p>Busca por nombre del grupo</p>
+        </div>
+        <div class="row second-row">
+          <mat-form-field class="example-full-width">
+            <mat-label></mat-label>
+            <input matInput placeholder="Nombre o apellido" (input)="onSearchChange($event)" [value]="filter">
+        </mat-form-field>
+        </div>
+      </div>
+      <div class="col right">
+        <div class="row first-row">
+          <p>Fecha de creación</p>
+        </div>
+        <div class="row second-row">
+          <mat-form-field  class="picker">
+            <mat-label></mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate [(ngModel)]='startInput' (dateChange)="startChange($event)" placeholder="Fecha inicio" name="filterDate">
+              <input matEndDate [(ngModel)]='endInput' (dateChange)="endChange($event)"placeholder="Fecha fin">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"><mat-icon matDatepickerToggleIcon (click)="clearDate($event)">clear</mat-icon></mat-datepicker-toggle>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Resultados">
+
+     <div  class="wrapper">
+      <a *ngFor="let item of groups" [routerLink]="['/detail/'+ item._id]" routerLinkActive="router-link-active"
+      >
+        <img src="{{item.photo}}"  alt="">
+        <p>{{item.name}}</p>
+    </a>
+     </div>
+   </div>
+
+</div>

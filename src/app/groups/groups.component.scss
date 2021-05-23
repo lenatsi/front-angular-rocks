@@ -1,0 +1,131 @@
+.Groups {
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: -10%;
+  margin-top: -80px;
+  padding-top: 80px;
+  background: linear-gradient(
+      to right,
+      rgb(29, 0, 116),
+      rgba(237, 92, 155, 0.694)
+    ),
+    url("https://www.10wallpaper.com/wallpaper/3840x2160/1902/Music_concert_passionate_live_party_3840x2160.jpg");
+  background-size: cover;
+  background-position: top left;
+  background-attachment: fixed;
+  .Busqueda {
+    height: 132px;
+    width: 985px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 100px;
+    .main-row {
+      height: 132px;
+      .left {
+        margin-right: 10px;
+        mat-form-field {
+          height: 59px;
+          border-radius: 13px;
+          background-color: #ffffffcb;
+          .mat-form-field-flex {
+            height: 59px;
+            input {
+              height: 59px;
+              border-radius: 13px;
+              border: none;
+              outline: none;
+              background-color: #ffffffcb;
+              &:focus {
+                box-shadow: none;
+                outline: none;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+      .first-row {
+        height: 19px;
+        margin-top: 24px;
+        color: #ffffff;
+      }
+      .second-row {
+        height: 59px;
+        width: 345px;
+        margin-top: 5px;
+        .picker {
+          height: 59px;
+          border-radius: 13px;
+          background-color: #ffffffcb;
+          input {
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .Resultados {
+    width: 80%;
+    height: fit-content;
+    max-height: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    .wrapper {
+      position: relative;
+      flex-grow: 1;
+      margin: auto;
+      max-width: 90%;
+      max-height: 90%;
+      margin-bottom: -2%;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      justify-items: center;
+      align-items: center;
+        a{
+          z-index: 1;
+          grid-column: span 2;
+          max-width: 100%;
+          height: fit-content;
+          margin-bottom: -52%;
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          transform: scale(1);
+          transition: all 0.25s;
+          &:nth-child(7n + 1) {
+            grid-column: 2/ span 2;
+          }
+          &:hover{
+            z-index: 2;
+            transform: scale(1.5);
+            filter: grayscale(1);
+            p{
+              transform:scale(1);
+              visibility: visible;
+              filter: grayscale(0);
+            }
+          }
+          img {
+            width: 20vw;
+            height: 20vw;
+
+            object-fit: cover;
+          }
+          p {
+            z-index: 4;
+            position: absolute;
+            margin-top: -60%;
+            left: 5vw;
+            visibility: hidden;
+            color:rgb(255, 255, 255);
+            font-weight: 900;
+            font-size: 20px;
+          }
+        }
+    }
+  }
+}

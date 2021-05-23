@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   .Menu{
+    z-index: 300;
     width: 90vh;
     min-width: 10vh;
     height: 80px;

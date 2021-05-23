@@ -53,14 +53,18 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NotifierModule } from 'angular-notifier';
 import { SignUpComponent } from './signUp/signUp.component';
+import { GroupsComponent } from './groups/groups.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
       TopMenuComponent,
       HomeComponent,
       LoginComponent,
-      SignUpComponent
+      SignUpComponent,
+      GroupsComponent,
+      DetailsComponent
    ],
   imports: [
     BrowserModule,
