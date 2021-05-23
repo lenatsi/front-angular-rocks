@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+<div class="Login">
+  <div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSave()" class="row g-2 needs-validation" novalidate>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" formControlName="email" [ngClass]="{'is-invalid': isSend && f.email.errors}" placeholder="Correo electrónico">
+        <label for="floatingInput">Email</label>
+        <div class="invalid-feedback">
+          Introduce un email válido
+      </div>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid': isSend && f.password.errors}" id="floatingPassword" placeholder="Contraseña">
+        <label for="floatingPassword">Contraseña</label>
+        <div class="invalid-feedback">
+          Introduce una contraseña válida
+      </div>
+    </div>
+    <a href="">¿Has olvidado la contraseña?</a>
+
+    <button class="btn btn-lg Submit" type="submit"><p>Rock it!</p><span class="material-icons">
+      login
+      </span></button>
+    </form>
+    <button (click)="signup()" class="btn SignUp" type="button">¡Regístrate aquí!</button>
+  </div>
+</div>

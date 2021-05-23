@@ -41,7 +41,10 @@
         border: none;
         border-radius: 50%;
         transform-origin: top right;
-        transform: rotate(90deg)
+        transform: rotate(90deg);
+        &:focus {
+          box-shadow: none;
+        }
       }
     }
   }

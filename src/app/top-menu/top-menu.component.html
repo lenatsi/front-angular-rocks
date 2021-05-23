@@ -2,12 +2,12 @@
   <div class="space"></div>
   <div class="Menu">
     <div class="left">
-      <a href="#">Home</a>
-      <a href="#">Grupos</a>
-      <a href="#">Canciones</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/groups" routerLinkActive="active">Grupos</a>
+      <a routerLink="/songs" routerLinkActive="active">Canciones</a>
     </div>
     <div class="right">
-      <button type="button" class="btn btn-primary"><span class="material-icons">
+      <button type="button" routerLink="login" routerLinkActive="active" class="btn btn-primary"><span class="material-icons">
         account_circle
         </span>
         </button>

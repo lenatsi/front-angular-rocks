@@ -1,0 +1,40 @@
+<div class="login-box">
+  <div class="form-signin">
+    <form [formGroup]="mForm" (ngSubmit)="onSave()" class="row g-2 needs-validation" novalidate>
+          <div class="form-floating">
+              <input type="name" class="form-control" id="floatingName" [(ngModel)]= "name" formControlName="name" [ngClass]="{'is-invalid': isSend && f.name.errors}"placeholder="Nombre de usuario">
+              <label for="floatingInput">Nombre</label>
+              <div class="invalid-feedback">
+                Introduce un nombre válido
+              </div>
+          </div>
+          <div class="form-floating mt-2">
+              <input type="email" class="form-control" id="floatingEmail"[(ngModel)]= "email"formControlName="email" [ngClass]="{'is-invalid': isSend && f.email.errors}"  placeholder="Correo electrónico">
+              <label for="floatingInput">Email</label>
+              <div class="invalid-feedback">
+                Introduce un email válido
+              </div>
+          </div>
+          <div class="form-floating mt-2">
+              <input type="password" class="form-control" id="floatingPassword" [(ngModel)]= "Newpassword"formControlName="password" [ngClass]="{'is-invalid': isSend && f.password.errors}" placeholder="Contraseña">
+              <label for="floatingPassword">Contraseña</label>
+              <div class="invalid-feedback">
+                Introduce una contraseña válida
+              </div>
+          </div>
+          <div class="form-floating mt-2">
+            <input type="password" class="form-control" id="floatingPasswordRepeat" formControlName="passwordRepeat" [ngClass]="{'is-invalid': isSend && f.passwordRepeat.errors}" placeholder="Repite contraseña">
+            <label for="floatingPassword">Repite la contraseña</label>
+            <div class="invalid-feedback">
+              La contraseña no coincide
+            </div>
+        </div>
+          <br>
+          <button class="btn Submit" type="submit">Registrarme</button>
+      </form>
+
+      <button (click)="login()" class="btn mt-3" type="submit">¡Oops! Ya tengo cuenta <span class="material-icons">
+        login
+        </span></button>
+  </div>
+</div>

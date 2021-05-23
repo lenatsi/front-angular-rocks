@@ -52,13 +52,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NotifierModule } from 'angular-notifier';
+import { SignUpComponent } from './signUp/signUp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
       TopMenuComponent,
       HomeComponent,
-      LoginComponent
+      LoginComponent,
+      SignUpComponent
    ],
   imports: [
     BrowserModule,
