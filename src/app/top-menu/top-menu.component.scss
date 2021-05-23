@@ -1,0 +1,49 @@
+.menu{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .Menu{
+    width: 90vh;
+    min-width: 10vh;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    transform-origin: bottom right;
+    transform: rotate(270deg);
+    background-color: none;
+    .left{
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+      align-self: center;
+      a{
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 600;
+        color:rgb(255, 255, 255);
+        text-transform: uppercase;
+        margin-right: 20px;
+      }
+    }
+    .right{
+      width: 40%;
+      display: contents;
+      justify-content: end;
+      align-self: center;
+      button{
+        height: 46px;
+        align-self: center;
+        margin-right: -60px;
+        margin-bottom: -80px;
+        padding-top: 10px;
+        background-color: rgb(29, 0, 116);
+        border: none;
+        border-radius: 50%;
+        transform-origin: top right;
+        transform: rotate(90deg)
+      }
+    }
+  }
+
+}
