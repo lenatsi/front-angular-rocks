@@ -36,9 +36,9 @@ getGroup(_id: string): Observable<any> {
     }),
   )
 }
-updateGroup(Group: Group): Observable<any> {
+updateGroup(group: Group): Observable<any> {
   return this.httpClient
-    .put(`${environment.apiUrl}/group/${Group._id}`, Group)
+    .put(`${environment.apiUrl}/group/${group._id}`, group)
     .pipe(
       catchError((error) => {
         return error

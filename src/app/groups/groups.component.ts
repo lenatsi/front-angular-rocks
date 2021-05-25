@@ -1,3 +1,4 @@
+import { NotifierService } from 'angular-notifier'
 import { GroupService } from './../../services/groups/group.service'
 import { Group } from './../models/group.model'
 import { Component, OnInit } from '@angular/core'
@@ -23,6 +24,7 @@ export class GroupsComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private groupService: GroupService,
+    private notifierService: NotifierService,
   ) {}
 
   ngOnInit() {
@@ -46,14 +48,16 @@ export class GroupsComponent implements OnInit {
   onSearchChange(searchValue: any) {
     this.filtro = searchValue.target.value
     const params = this.filtro
-    console.log(params)
     this.groupService.getGroups(params, '', '').subscribe(
       (data: Group[]) => {
         this.groups = data
-        //console.log(data)
       },
       (error) => {
-        console.log('Error:', error)
+        this.notifierService.notify(
+          'error',
+          'Algo ha ido mal. Prueba hacerlo otra vez.',
+        )
+        return
       },
     )
   }
@@ -81,10 +85,13 @@ export class GroupsComponent implements OnInit {
     this.groupService.getGroups(this.filter, start, end).subscribe(
       (data: Group[]) => {
         this.groups = data
-        //console.log(data)
       },
       (error) => {
-        console.log('Error:', error)
+        this.notifierService.notify(
+          'error',
+          'Algo ha ido mal. Prueba hacerlo otra vez.',
+        )
+        return
       },
     )
   }

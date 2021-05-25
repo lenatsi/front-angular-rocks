@@ -1,12 +1,26 @@
+<notifier-container></notifier-container>
+
 <div class="Dashboard">
   <div class="container">
-    <div class="sidemenu ">
+    <div class="sidemenu">
       <div class="row nombre">¡Hola, Jefe!</div>
-      <div class="row"><a routerLink="/dashboard/home">Listado de grupos</a></div>
-      <div class="row"><a routerLink="/home">Salir <span class="material-icons">
-        logout
-        </span></a></div>
+      <p>
+        Te doy la bienvenida a tu panel. Aquí puedes ver el listado de grupos
+        que hay, editarlos, eliminarlos y también tienes un botón para añadir
+        nuevos. Cuando estés listo - dale a salir y volverás a la página principal.
+      </p>
+      <button type="button" (click)="addNew()">Añadir nuevo</button>
+      <div class="row menu">
+        <a routerLink="/dashboard/home" routerLinkActive="active"
+          >Listado de grupos</a
+        >
+      </div>
+      <div class="row exit">
+        <a (click)="logOut()" routerLink="/" routerLinkActive="active"
+          ><p>Salir</p> <span class="material-icons"> logout </span></a
+        >
+      </div>
     </div>
-    <div class="feed "><router-outlet></router-outlet></div>
+    <div class="feed"><router-outlet></router-outlet></div>
   </div>
 </div>

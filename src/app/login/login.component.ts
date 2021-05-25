@@ -40,27 +40,23 @@ export class LoginComponent implements OnInit {
 
   onSave() {
     this.isSend = true
-    //console.log('Guardar!!', this.mForm)
-
     if (this.loginForm.invalid) {
-      //console.error('El formulario NO es válido')
+      this.notifierService.notify( 'error', 'Algo ha ido mal. Prueba hacerlo otra vez.')
       return
     }
-    //console.log('El formulario es válido')
     const login: Login = new Login()
     login.email = this.f.email.value
     login.password = this.f.password.value
     this.userService.login(login).subscribe(
       (data) => {
-        this.notifierService.notify('success', 'Datos actualizados')
         localStorage.setItem('token', data.access_token)
         this.router.navigate(['/dashboard'])
       },
       (error) => {
-        console.log('Error:', error)
+        this.notifierService.notify( 'error', 'Algo ha ido mal. Prueba hacerlo otra vez.')
+            return
       },
     )
-
   }
   signup() {
     this.router.navigate(['/signup'])

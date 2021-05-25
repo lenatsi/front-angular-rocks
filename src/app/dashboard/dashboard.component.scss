@@ -23,13 +23,28 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background-color: rgba(255, 255, 255, 0.653);
+
       margin-left: 0;
       border-radius: 20px 0px 0px 20px;
       padding: 30px;
+      p{
+        font-size: 16px;
+        color: #02024a;
+      }
+      button{
+        height: 60px;
+        border: none;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0);
+        background-image: linear-gradient(45deg, #290161, #af426100);
+
+      }
       .row.nombre {
-        font-size: 30px;
-        line-height: 35px;
+        text-align: center;
+        font-size: 40px;
+        line-height: 45px;
         font-family: "trajan-pro-3", serif;
         background-color: #0f0fcb;
         background-image: linear-gradient(45deg, #0f0fcb, #af4261);
@@ -45,17 +60,51 @@
         font-size: 20px;
         margin-top: 20px;
 
-        text-transform: uppercase;
         text-decoration: none;
         color: #0f0fcb;
         font-weight: 400;
+      }
+      .menu{
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.461);
+        margin-right: -30px;
+        border-radius: 16px 0px 0px 16px;
+        text-transform: uppercase;
+        text-align: center;
+        align-items: center;
+        font-family: "trajan-pro-3", serif;
+      }
+      .exit{
+        height: 100px;
+        align-items: center;
+        a{
+          display: flex;
+          justify-content: left;
+          padding: 0;
+          text-decoration: none;
+          color: #02024a;
+          p{
+            align-self: center;
+            margin: 0;
+            font-size: 18px;
+            margin-right: 10px;
+            margin-left: 10px;
+          }
+          .material-icons{
+            align-self: center;
+
+          }
+        }
+
       }
     }
     .feed{
       width: 75%;
       height: 100%;
-      padding: 5%;
-
+      padding-left: 8%;
+      padding-top: 10%;
+      border-radius: 0px 16px 16px 0px;
+      background-color: rgba(255, 255, 255, 0.461);
     }
   }
 }

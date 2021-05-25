@@ -1,3 +1,43 @@
-<p>
-  editGroup works!
-</p>
+<notifier-container></notifier-container>
+
+<div class="container">
+  <form [formGroup]="editForm" (ngSubmit)="updateGroup()" class="row g-2">
+  <div class="mb-3">
+    <label for="FormControlInput0" class="form-label">Nombre del grupo</label>
+    <input type="text" class="form-control" id="FormControlInput0" [(ngModel)]= 'group.name' formControlName="name" [ngClass]="{'is-invalid': isSend && f.name.errors}" value ="">
+    <div class="invalid-feedback">
+      Introduce un nombre válido
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="FormControlInput1" class="form-label">Género musical</label>
+    <input type="text" class="form-control" id="FormControlInput1" [(ngModel)]= 'group.gender'formControlName="gender" [ngClass]="{'is-invalid': isSend && f.gender.errors}">
+    <div class="invalid-feedback">
+      Introduce un nombre válido
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="FormControlInput2" class="form-label">Fecha de creación</label>
+    <input type="date" moment-picker format="yyyy-MM-dd" class="form-control" formControlName="foundationDate" ng-bind='group.foundationDate' [ngClass]="{'is-invalid': isSend && f.foundationDate.errors}" id="FormControlInput2" value="{{group.foundationDate | date:'yyyy-MM-dd'}}">
+    <div class="invalid-feedback">
+      Introduce un nombre válido
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="FormControlInput3" class="form-label">Foto</label>
+    <input type="text" class="form-control" formControlName="photo" [(ngModel)]= 'group.photo' [ngClass]="{'is-invalid': isSend && f.photo.errors}" id="FormControlInput3" placeholder="https://...." >
+    <div class="invalid-feedback">
+      Introduce un nombre válido
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="FormControlTextarea1" class="form-label">Biografía</label>
+    <textarea class="form-control" formControlName="description" [(ngModel)]= 'group.description'[ngClass]="{'is-invalid': isSend && f.description.errors}"id="FormControlTextarea1" rows="7"></textarea>
+    <div class="invalid-feedback">
+      Introduce un nombre válido
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary mb-3">Guardar</button>
+</form>
+</div>
+

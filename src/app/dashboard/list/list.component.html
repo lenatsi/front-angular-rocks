@@ -1,9 +1,5 @@
+<notifier-container></notifier-container>
 <table mat-table [dataSource]="groups" class="mat-elevation-z8">
-
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
 
 <ng-container matColumnDef="photo">
   <th mat-header-cell *matHeaderCellDef> Foto </th>
@@ -17,18 +13,41 @@
 
   <ng-container matColumnDef="edit">
     <th mat-header-cell *matHeaderCellDef> Editar </th>
-    <td mat-cell *matCellDef="let element"> <a routerLink=""><span class="material-icons">
+    <td mat-cell *matCellDef="let element"> <a [routerLink]="'/dashboard/edit/'+ element._id"><span class="material-icons">
       edit
       </span></a> </td>
   </ng-container>
 
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef> Eliminar </th>
-    <td mat-cell *matCellDef="let element"> <button type="submit"><span class="material-icons">
+    <td mat-cell *matCellDef="let element"> <button (click)="deleteGroup(element._id)" type="submit" ><span class="material-icons">
       delete
-      </span></button> </td>
+      </span></button></td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+
+
+<div *ngIf="modal" class="modal-backdrop fade show"></div>
+  <div *ngIf="modal" class="modal fade show" id="exampleModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Vas a eliminar a este grupo</h5>
+              <button mat-button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ¿Estas seguro de querer eliminar este grupo? Se eliminará de la base de datos y no se podrá recuperar.
+            </div>
+            <div class="modal-footer">
+              <button mat-button data-bs-dismiss="modal">Cancelar</button>
+              <button mat-button  (click)="modalDelete()">Sí, quiero eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+

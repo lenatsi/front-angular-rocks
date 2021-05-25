@@ -51,14 +51,57 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { NotifierModule } from 'angular-notifier';
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { SignUpComponent } from './signUp/signUp.component';
 import { GroupsComponent } from './groups/groups.component';
 import { DetailsComponent } from './details/details.component';
 import { SongsComponent } from './songs/songs.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import localeES from "@angular/common/locales/es";
+import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localeES, "es");
 
+const customNotifierOptions: NotifierOptions = {
+  position: {
+      horizontal: {
+          position: 'left',
+          distance: 12
+      },
+      vertical: {
+          position: 'bottom',
+          distance: 12,
+          gap: 10
+      }
+  },
+  theme: 'material',
+  behaviour: {
+      autoHide: 5000,
+      onClick: false,
+      onMouseover: 'pauseAutoHide',
+      showDismissButton: true,
+      stacking: 4
+  },
+  animations: {
+      enabled: true,
+      show: {
+          preset: 'slide',
+          speed: 300,
+          easing: 'ease'
+      },
+      hide: {
+          preset: 'fade',
+          speed: 300,
+          easing: 'ease',
+          offset: 50
+      },
+      shift: {
+          speed: 300,
+          easing: 'ease'
+      },
+      overlap: 150
+  }
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,7 +159,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatTreeModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    NotifierModule,
+    NotifierModule.withConfig(customNotifierOptions),
     HttpClientModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' },{provide: LOCALE_ID, useValue: 'es-ES'},
