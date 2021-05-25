@@ -1,3 +1,4 @@
+import { SongsComponent } from './songs/songs.component';
 import { DetailsComponent } from './details/details.component';
 import { GroupsComponent } from './groups/groups.component';
 import { SignUpComponent } from './signUp/signUp.component';
@@ -12,11 +13,14 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "signup", component: SignUpComponent},
   {path: "groups", component: GroupsComponent},
+  {path: "songs", component: SongsComponent},
   {path: "detail/:id", component: DetailsComponent}
 ] ;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+   declarations: [
+   ]
 })
 export class AppRoutingModule { }

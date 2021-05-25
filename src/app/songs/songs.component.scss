@@ -1,0 +1,81 @@
+.Songs {
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: -10%;
+  margin-top: -80px;
+  padding-top: 80px;
+  background: linear-gradient(
+      to right,
+      rgb(29, 0, 116),
+      rgba(237, 92, 155, 0.694)
+    ),
+    url("https://www.10wallpaper.com/wallpaper/3840x2160/1902/Music_concert_passionate_live_party_3840x2160.jpg");
+  background-size: cover;
+  background-position: top left;
+  background-attachment: fixed;
+  .Busqueda {
+    height: 132px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 60px;
+    mat-form-field {
+      height: 59px;
+      border-radius: 13px;
+      background-color: #ffffffcb;
+      .mat-form-field-flex {
+        height: 59px;
+        input {
+          height: 59px;
+          border-radius: 13px;
+          border: none;
+          outline: none;
+          background-color: #ffffffcb;
+          &:focus {
+            box-shadow: none;
+            outline: none;
+            border: none;
+          }
+        }
+      }
+    }
+    .first-row {
+      height: 19px;
+      margin-top: 24px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .second-row {
+      display: flex;
+      justify-content: center;
+      height: 59px;
+      width: 60%;
+      margin: auto;
+      margin-top: 5px;
+    }
+  }
+  .resultados {
+    width: 80%;
+    margin: auto;
+    .tarjeta {
+      height: 300px;
+      margin-bottom: 40px;
+      h5 {
+        height: 100px;
+        margin-top: -20px;
+        font-size: 30px;
+        line-height: 35px;
+        font-family: "trajan-pro-3", serif;
+        background-color: #f3ec78;
+        background-image: linear-gradient(45deg, #f3ec78, #af4261);
+        background-size: 100%;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      }
+      iframe{
+        box-shadow: 5px 5px white;
+        border-radius: 16px;
+      }
+    }
+  }
+}

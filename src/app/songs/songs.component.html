@@ -1,0 +1,36 @@
+<div class="Songs">
+  <div class="Busqueda">
+    <div class="row first-row">
+      <p>Busca por nombre del grupo</p>
+    </div>
+    <div class="row second-row">
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input
+          matInput
+          placeholder="Nombre o apellido"
+          (input)="onSearchChange($event)"
+          [value]="filter"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="resultados">
+    <div class="row">
+      <div *ngFor="let song of songs" class="col-sm-12 col-md-6 col-lg-4">
+        <div class="tarjeta">
+          <div class="ttitle">
+            <h5>{{song.name}}</h5>
+          </div>
+          <div class="tbody">
+            <p class="ttext"><iframe
+              class="embed-responsive-item"
+              [src]="sanitizer.bypassSecurityTrustResourceUrl(song.link)"
+              allowfullscreen
+            ></iframe></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

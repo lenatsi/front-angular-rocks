@@ -53,4 +53,23 @@ deleteGroup(_id: string): Observable<any> {
   )
 }
 
+getGroupSongs(_id: string): Observable<any> {
+  return this.httpClient.get(`${environment.apiUrl}/group/${_id}/songs`).pipe(
+    catchError((error) => {
+      return error
+    }),
+  )
+}
+
+getSongs(filter: string): Observable<any> {
+  const params = {filter:filter}
+  return this.httpClient
+    .get(`${environment.apiUrl}/songs`, { params:params })
+    .pipe(
+      catchError((error) => {
+        return error
+      }),
+    )
+}
+
 }

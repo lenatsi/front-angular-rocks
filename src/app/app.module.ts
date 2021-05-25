@@ -55,16 +55,19 @@ import { NotifierModule } from 'angular-notifier';
 import { SignUpComponent } from './signUp/signUp.component';
 import { GroupsComponent } from './groups/groups.component';
 import { DetailsComponent } from './details/details.component';
+import { SongsComponent } from './songs/songs.component';
+
 
 @NgModule({
-  declarations: [		
+  declarations: [	
     AppComponent,
       TopMenuComponent,
       HomeComponent,
       LoginComponent,
       SignUpComponent,
       GroupsComponent,
-      DetailsComponent
+      DetailsComponent,
+      SongsComponent
    ],
   imports: [
     BrowserModule,
