@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
       (data) => {
         this.notifierService.notify('success', 'Datos actualizados')
         localStorage.setItem('token', data.access_token)
-        this.router.navigate(['/'])
+        this.router.navigate(['/dashboard'])
       },
       (error) => {
         console.log('Error:', error)

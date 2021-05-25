@@ -4,24 +4,29 @@
   </div>
   <h2>Descubre, crea, diviértete</h2>
   <div class="Intro">
-
     <div class="Busqueda">
       <input
+        #name
         type="search"
         class="form-control"
         placeholder="¿Quieres buscar un grupo?"
+        (keydown.enter)="search(name.value)"
       />
-      <button class="btn btn-lg btn-success" type="submit">
+      <button
+        class="btn btn-lg btn-success"
+        (click)="search(name.value)"
+        type="submit"
+      >
         <span class="material-icons">search</span>
       </button>
-
     </div>
     <p>
-      ¡Eh, jefe! ¡Tu lista está completa! Puedes buscar los grupos por su nombre
-      o fecha de creación, ver sus fichas y sus canciones. También he añadido
-      una sección de canciones exclusivamente, donde puedes ver un listado de
-      todas las canciones con el nombre del artista que la interpreta. ¡Ah, y
-      puedes añadir nuevos grupos! ¡Que la disfrutes!
+      ¡Eh, jefe! ¡Tu lista está completa! Puedes buscar desde aquí o en la
+      pestaña de "Grupos" por el nombre del grupo o fecha de creación, ver sus
+      fichas y sus canciones. También he añadido una sección de canciones
+      exclusivamente, donde puedes ver un listado de todas las canciones. ¡Ah, y
+      puedes loguearte para añadir nuevos grupos, modificar o eliminar los
+      existentes! ¡Que la disfrutes!
     </p>
   </div>
 </div>

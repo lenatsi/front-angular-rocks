@@ -1,11 +1,11 @@
+import { EditGroupComponent } from './dashboard/editGroup/editGroup.component';
+import { ListComponent } from './dashboard/list/list.component';
 import { AuthInterceptorService } from './../services/interceptors/auth-interceptor.service';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
-
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -56,10 +56,11 @@ import { SignUpComponent } from './signUp/signUp.component';
 import { GroupsComponent } from './groups/groups.component';
 import { DetailsComponent } from './details/details.component';
 import { SongsComponent } from './songs/songs.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
       TopMenuComponent,
       HomeComponent,
@@ -67,7 +68,10 @@ import { SongsComponent } from './songs/songs.component';
       SignUpComponent,
       GroupsComponent,
       DetailsComponent,
-      SongsComponent
+      SongsComponent,
+      DashboardComponent,
+      ListComponent,
+      EditGroupComponent
    ],
   imports: [
     BrowserModule,

@@ -1,14 +1,14 @@
 <div class="Songs">
   <div class="Busqueda">
     <div class="row first-row">
-      <p>Busca por nombre del grupo</p>
+      <p>Busca por nombre de la canción</p>
     </div>
     <div class="row second-row">
       <mat-form-field class="example-full-width">
         <mat-label></mat-label>
         <input
           matInput
-          placeholder="Nombre o apellido"
+          placeholder="¿Qué canción quieres escuchar?"
           (input)="onSearchChange($event)"
           [value]="filter"
         />
